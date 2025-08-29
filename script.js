@@ -9,6 +9,5 @@ checkbox.addEventListener("click", function(){
 form.addEventListener("click", function(event){
 	if(!form.checkValidity()){
 		event.preventDefault();
-		alert("Please complete all fields before submitting.");
 	}
 })
