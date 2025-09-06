@@ -1,20 +1,18 @@
-const form = document.getElementById("myForm");
-    const terms = document.getElementById("terms");
-    const submitBtn = document.getElementById("submitBtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("myForm");
+  const terms = document.getElementById("terms");
+  const submitBtn = document.getElementById("submitBtn");
 
-    // Enable/disable button whenever checkbox changes
-    terms.addEventListener("change", () => {
-      if (terms.checked) {
-        submitBtn.removeAttribute("disabled"); // ✅ explicitly remove disabled
-      } else {
-        submitBtn.setAttribute("disabled", "true");
-      }
-    });
+  // Enable/disable submit based on checkbox
+  terms.addEventListener("change", function () {
+    submitBtn.disabled = !terms.checked;
+  });
 
-    // Validate before submit
-    form.addEventListener("submit", (e) => {
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        alert("Please complete all required fields.");
-      }
-    });
+  // Extra validation before submit
+  form.addEventListener("submit", function (e) {
+    if (!form.checkValidity()) {
+      e.preventDefault();
+      alert("Please fill all fields correctly.");
+    }
+  });
+});
