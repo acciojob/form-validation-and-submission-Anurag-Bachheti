@@ -1,5 +1,5 @@
-const form = document.getElementById("myForm");
-    const terms = document.getElementById("terms");
+ const form = document.getElementById("myForm");
+    const terms = document.querySelector('input[name="terms"]');
     const submitBtn = document.getElementById("submitBtn");
 
     // Enable submit button only when checkbox is checked
@@ -7,10 +7,10 @@ const form = document.getElementById("myForm");
       submitBtn.disabled = !terms.checked;
     });
 
-    // Validate all fields before submit
+    // Validate before submission
     form.addEventListener("submit", (e) => {
       if (!form.checkValidity()) {
-        e.preventDefault(); // prevent submission if fields are invalid
+        e.preventDefault();
         alert("Please complete all required fields.");
       }
     });

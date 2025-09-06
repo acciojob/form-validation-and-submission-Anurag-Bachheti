@@ -1,1 +1,27 @@
-/*  your css code here. If applicable */
+form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    button[disabled] {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    button {
+      padding: 10px 15px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
