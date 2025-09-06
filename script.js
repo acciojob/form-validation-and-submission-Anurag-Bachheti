@@ -1,13 +1,17 @@
- const form = document.getElementById("myForm");
-    const terms = document.querySelector('input[name="terms"]');
+const form = document.getElementById("myForm");
+    const terms = document.getElementById("terms");
     const submitBtn = document.getElementById("submitBtn");
 
-    // Enable submit button only when checkbox is checked
+    // Enable/disable button whenever checkbox changes
     terms.addEventListener("change", () => {
-      submitBtn.disabled = !terms.checked;
+      if (terms.checked) {
+        submitBtn.removeAttribute("disabled"); // ✅ explicitly remove disabled
+      } else {
+        submitBtn.setAttribute("disabled", "true");
+      }
     });
 
-    // Validate before submission
+    // Validate before submit
     form.addEventListener("submit", (e) => {
       if (!form.checkValidity()) {
         e.preventDefault();
